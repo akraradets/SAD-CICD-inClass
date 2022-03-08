@@ -1,0 +1,14 @@
+name: 2-GitHubAction.yml
+on: [push]
+jobs:
+  integration:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "Hi there everyone"
+      # https://github.com/actions/checkout
+      - uses: actions/checkout@v2 # Here we `uses` instead of `run`
+      - run: ls -la
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      - run: ls -la
