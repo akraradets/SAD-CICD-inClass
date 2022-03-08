@@ -1,5 +1,10 @@
 FROM python:3.10.2-bullseye
 
+ARG http_proxy
+ARG https_proxy
+
+ENV http_proxy ${http_proxy}
+ENV https_proxy ${https_proxy}
 # This disallowed python to create complited code (byte code)
 # It causes less disk usage with sacrifice of performace
 # ENV PYTHONDONTWRITEBYTECODE=1
