@@ -1,0 +1,15 @@
+name: 1-My First Script
+on: [push]
+jobs:
+  myOwnTestScript:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: pwd
+      - run: ls -la
+      - name: ls -la with name ja
+        run: ls -la
+      - name: run ls -la with workingdir as /
+        run: ls -la
+        working-directory: /
+      - run: touch hija.txt
+      - run: ls -la
