@@ -1,0 +1,14 @@
+name: 6-simpleDeploy
+on: [push]
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Clone Reposistory
+        uses: actions/checkout@v2
+        with: 
+          clean: false
+      - name: compose down
+        run: sudo docker-compose down
+      - name: compose up
+        run: sudo docker-compose up --build -d 
