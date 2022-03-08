@@ -2,7 +2,7 @@ name: 3-simpleCI
 on: [push]
 jobs:
   integration:
-    runs-on: self-hosted
+    runs-on: ubuntu-20.04
     steps:
       - name: Clone Reposistory
         uses: actions/checkout@v2
