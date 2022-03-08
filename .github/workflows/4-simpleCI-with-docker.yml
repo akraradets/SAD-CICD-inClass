@@ -1,0 +1,12 @@
+name: 4-simpleCI-with-docker
+on: [push]
+jobs:
+  integration:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Clone Reposistory
+        uses: actions/checkout@v2
+      - name: Create Docker
+        run: docker-compose up --build -d
+      - name: Automate test
+        run: docker-compose exec django python3 manage.py test
